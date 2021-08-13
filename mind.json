@@ -1,0 +1,11 @@
+{"mind" : [
+	{"etiqueta":"saludo",
+		"patrones":["hola","buenas","saludo"],
+		"respuestas":["Hola, mucho gusto me llamo Mike, y tú?","Hola, gusto en verte"]
+		},
+	{"etiqueta":"despedida",
+		"patrones":["nos vemos","hasta luego","me voy","me tengo que ir","Chao","bye"]
+		"respuestas":["Nos vemos, cuidate!","Chao, cuidate","Que tengas un buen día"]
+		}
+	]
+}
