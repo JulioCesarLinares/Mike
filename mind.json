@@ -1,11 +1,15 @@
-{"mind" : [
-	{"etiqueta":"saludo",
-		"patrones":["hola","buenas","saludo"],
-		"respuestas":["Hola, mucho gusto me llamo Mike, y tú?","Hola, gusto en verte"]
+{"datos" : [
+	{"tipo":"saludo",
+		"posibilidades":["hola","buenas","saludo"],
+		"respuestas":["Hola mucho gusto me llamo Mike y tú?","Hola gusto en verte"]
 		},
-	{"etiqueta":"despedida",
-		"patrones":["nos vemos","hasta luego","me voy","me tengo que ir","Chao","bye"]
-		"respuestas":["Nos vemos, cuidate!","Chao, cuidate","Que tengas un buen día"]
+	{"tipo":"despedida",
+		"posibilidades":["nos vemos","hasta luego","me voy","me tengo que ir","Chao","bye"],
+		"respuestas":["Nos vemos, cuidate!","Chao cuidate","Que tengas un buen día"]
+		},
+	{"tipo":"hora",
+		"posibilidades":["que hora es?","sabes la hora?"],
+		"respuestas":["Claro, son las 3"]
 		}
 	]
 }

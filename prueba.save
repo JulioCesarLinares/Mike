@@ -1,0 +1,16 @@
+print("Hola, me llamo Mike, como te llamas? ",'\n')
+
+def run():
+        while True:
+                entrada = input("Habla tú: ")
+                matriz = [0 for ceros in range(len(palabras))]
+                ProcessingEntrada = nltk.word_tokenize(entrada)
+                ProcessingEntrada = [recortador.stem(wo.lower()) for wo in ProcessingEntrada]
+                for pala in ProcessingEntrada:
+                        for i,pal in enumerate(palabras):
+                                if pala == pal:
+                                        matriz[i]=1
+                resultados = model.predict([np.array(matriz)])
+                print(resultados)
+run()
+
