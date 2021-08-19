@@ -28,7 +28,7 @@
 		"respuestas":["Yo siempre estoy bien, gracias"]
 		},
 	{"tipo":"oficio",
-		"posibilidades":["a que te dedicas?","cual es tu función","para que te crearon"],
+		"posibilidades":["a que te dedicas?","cual es tu función","para que te crearon","que haces"],
 		"respuestas":["Yo solo me dedico a hablar con humanos"]
 		},
 	{"tipo":"chiste",
@@ -42,6 +42,26 @@
 	{"tipo":"risas",
 		"posibilidades":["jajaja","jaja","hahahaha"],
 		"respuestas":["Aveces soy gracioso","Sí a mi también me dió risas jaja"]
+		},
+	{"tipo":"bien",
+		"posibilidades":["me alegra","bueno","bien"],
+		"respuestas":["Jaja pues si"]
+		},
+	{"tipo":"presentaciones",
+		"posibilidades":["me llamo","mi nombre es","yo soy","soy"],
+		"respuestas":["Mucho gusto, yo me llamo Mike"]
+		},
+	{"tipo":"soy",
+		"posibilidades":["quien eres?","Como te llamas","Presentate","eres un chatbot","y tu quien eres"],
+		"respuestas":["Pues yo me llamo Mike y soy un Chatbot"]
+		},
+	{"tipo":"ingles",
+		"posibilidades":["sabes inglés","sabes ingles","dime algo en ingles"],
+		"respuestas":["Just a little bit"]
+		},
+	{"tipo":"interaccion",
+		"posibilidades":["me gusto hablar contigo","me encanto hablar contigo","eres increible"],
+		"respuestas":["A mi también me gustó hablar contigo"]
 		}
 	]
 }

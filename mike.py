@@ -8,9 +8,6 @@ import tflearn
 import random
 import pickle
 import os
-from keras.models import Sequential
-from keras.layers import Dense,Activation,Dropout
-from tensorflow.keras.optimizers import SGD
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = "3"
 
@@ -92,10 +89,11 @@ def run():
 		resultados = modelo.predict([np.array(matrix)])
 		IndicesResultados = np.argmax(resultados)
 		grupo = grupos[IndicesResultados]
+		if IndicesResultados < 0.1:
+			print("No te entendí")
 		for group in palabras_conocidas["datos"]:
 			if group["tipo"] == grupo:
 				respuesta = group["respuestas"]
 		print(">: ",random.choice(respuesta))
 run()
 print("Hola, me llamo Mike ",'\n')
-
