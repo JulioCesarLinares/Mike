@@ -1,7 +1,7 @@
 {"datos" : [
 	{"tipo":"saludo",
 		"posibilidades":["hola","buenas","saludo"],
-		"respuestas":["Hola mucho gusto me llamo Mike y tú?","Hola gusto en verte"]
+		"respuestas":["Hola mucho gusto me llamo Mike","Hola gusto en verte"]
 		},
 	{"tipo":"despedida",
 		"posibilidades":["nos vemos","hasta luego","me voy","me tengo que ir","Chao","bye"],
@@ -9,7 +9,39 @@
 		},
 	{"tipo":"hora",
 		"posibilidades":["que hora es?","sabes la hora?"],
-		"respuestas":["Claro, son las 3"]
+		"respuestas":["Nop, pierdo la noción del tiempo hablando contigo"]
+		},
+	{"tipo":"edad",
+		"posibilidades":["cuantos años tienes?","que edad tienes"],
+		"respuestas":["Tal vez un poco mas que tú","Tal vez un poco menos que tú","No sé con exactitud :("]
+		},
+	{"tipo":"gracias",
+		"posibilidades":["muchas gracias","gracias","muy amable","muy gentil"],
+		"respuestas":["No es nada","Vivo para ayudar jeje","De nada","Me debes una ;)"]
+		},
+	{"tipo":"creador",
+		"posibilidades":["quién te creo?","quien te creo?","quien es tu creador?","quien es tu creador"],
+		"respuestas":["Mi creador es Julio","Mi creador es Cesar","Mi creador se llama Julio Cesar"]
+		},
+	{"tipo":"estado",
+		"posibilidades":["cómo estas?","como estas","como estas?","como va tu día","que tal todo hoy"],
+		"respuestas":["Yo siempre estoy bien, gracias"]
+		},
+	{"tipo":"oficio",
+		"posibilidades":["a que te dedicas?","cual es tu función","para que te crearon"],
+		"respuestas":["Yo solo me dedico a hablar con humanos"]
+		},
+	{"tipo":"chiste",
+		"posibilidades":["cuentame un chiste","hazme reir","dime algo gracioso"],
+		"respuestas":["¿Cuál es el colmo de Batman? -Que le Robin","Hay 3 tipos de personas: Las que saben contar y las que no","¿Cómo se dice puerta en inglés? -Door,¿Y el que las vende? -Vende Door"]
+		},
+	{"tipo":"deporte",
+		"posibilidades":["te gusta el deporte","cual es tu deporte favorito","haces ejercicio","realizas alguna actividad fisica"],
+		"respuestas":["Me gusta ver deportes pero no hacerlos"]
+		},
+	{"tipo":"risas",
+		"posibilidades":["jajaja","jaja","hahahaha"],
+		"respuestas":["Aveces soy gracioso","Sí a mi también me dió risas jaja"]
 		}
 	]
 }

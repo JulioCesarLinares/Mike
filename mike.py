@@ -28,7 +28,7 @@ caract_ignorados = ['?','¿','!','¡']
 
 for grupo in palabras_conocidas["datos"]:
 	for posibilidad in grupo["posibilidades"]:
-		tokens = nltk.word_tokenize(posibilidad)  #Divide las palabras
+		tokens = nltk.word_tokenize(posibilidad) 
 		palabras.extend(tokens)
 		copia_tokens.append(tokens)
 		copia_grupos.append(grupo["tipo"])
@@ -73,12 +73,10 @@ modelo = tflearn.input_data(shape = [None,len(entrenamiento[0])])
 modelo = tflearn.fully_connected(modelo,10)
 modelo = tflearn.fully_connected(modelo,10)
 modelo = tflearn.fully_connected(modelo,len(salida[0]),activation='softmax')
-modelo = tflearn.regression(modelo) #,optimizer='sdg',loss='categorical_crossentropy')
+modelo = tflearn.regression(modelo) 
 modelo = tflearn.DNN(modelo)
 
-#model.compile(loss = 'mean_squared_error', optimizer = 'sgd', metrics = ['accuracy'])
-
-his = modelo.fit(entrenamiento,salida, n_epoch = 1000, batch_size = 10, show_metric=False)
+modelo.fit(entrenamiento,salida, n_epoch = 1000, batch_size = 10, show_metric=False)
 modelo.save("modelo.tflearn")
 
 def run():
@@ -99,5 +97,5 @@ def run():
 				respuesta = group["respuestas"]
 		print(">: ",random.choice(respuesta))
 run()
-print("Hola, me llamo Mike, como te llamas? ",'\n')
+print("Hola, me llamo Mike ",'\n')
 
