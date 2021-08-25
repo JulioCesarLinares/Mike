@@ -1,0 +1,11 @@
+{"datos" : [
+	{"tipo":"saludo",
+		"posibilidades":["hola buenas","buenas"],
+		"respuestas":["hola"]
+		},
+	{"tipo":"despedida",
+		"posibilidades":["chao","bye"],
+		"respuestas":["chao"]
+		}
+	]
+}

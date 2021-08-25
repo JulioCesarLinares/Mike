@@ -6,7 +6,6 @@ import tensorflow
 import json
 import tflearn
 import random
-import pickle
 import os
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = "3"
@@ -19,7 +18,7 @@ with open ('mind.json') as mente:
 palabras = []
 grupos = []
 tokens = []
-copia_tokens = []
+copia_palabras = []
 copia_grupos = []
 caract_ignorados = ['?','¿','!','¡']
 
@@ -27,53 +26,57 @@ for grupo in palabras_conocidas["datos"]:
 	for posibilidad in grupo["posibilidades"]:
 		tokens = nltk.word_tokenize(posibilidad) 
 		palabras.extend(tokens)
-		copia_tokens.append(tokens)
+		copia_palabras.append(tokens)
 		copia_grupos.append(grupo["tipo"])
 	if grupo["tipo"] not in grupos:
 		grupos.append(grupo["tipo"])
 
 palabras = [recortador.stem(word.lower()) for word in palabras if word not in
 		caract_ignorados]
-palabras = sorted(palabras)
+palabras = sorted(list(set(palabras)))
 grupos = sorted(grupos)
 
-#print("Este es copia_tokens: {}\n".format(copia_tokens))
-#print("Este es copia_grupos: {}\n".format(copia_grupos))
-#print("Este es tokens: {}\n".format(tokens))
-#print("Este es palabras: {}\n".format(palabras))
+print("Este es copia_palabras: {}\n".format(copia_palabras))
+print("Este es copia_grupos: {}\n".format(copia_grupos))
+print("Este es tokens: {}\n".format(tokens))
+print("Este es palabras: {}\n".format(palabras))
+print("Este es grupos: {}\n".format(grupos))
 
-entrenamiento = []
+entrada = []
 salida = []
 salida_vacia = [0 for a in range(len(grupos))]
 
-for n, tok in enumerate(copia_tokens):
+for n, pal in enumerate(copia_palabras):
 	matrix = []
-	tokens =  [recortador.stem(w.lower()) for w in tok]
-	for w in palabras:
-		if w in tokens:
+	tokens =  [recortador.stem(w.lower()) for w in pal]
+	print("Este es tokens", tokens)
+	for palab in palabras:
+		if palab in tokens:
 			matrix.append(1)
 		else:
 			matrix.append(0)
 	filaSalida = salida_vacia[:]
 	filaSalida[grupos.index(copia_grupos[n])] = 1
-	entrenamiento.append(matrix)
+	entrada.append(matrix)
 	salida.append(filaSalida)
 
 np.warnings.filterwarnings('ignore', category=np.VisibleDeprecationWarning)
-
-entrenamiento = np.array(entrenamiento)
+print("este es entre:",entrada)
+entrada = np.array(entrada) #Crear la matriz
 salida = np.array(salida)
+print("entre",len(entrada[0]))
+print("salida",salida)
 
-ops.reset_default_graph()
+ops.reset_default_graph() #reiniciar red neuronal, dejarla en limpio
 
-modelo = tflearn.input_data(shape = [None,len(entrenamiento[0])])
-modelo = tflearn.fully_connected(modelo,10)
-modelo = tflearn.fully_connected(modelo,10)
-modelo = tflearn.fully_connected(modelo,len(salida[0]),activation='softmax')
-modelo = tflearn.regression(modelo) 
-modelo = tflearn.DNN(modelo)
+red = tflearn.input_data(shape = [None,len(entrada[0])]) #forma de datos de entrada 
+red = tflearn.fully_connected(red,10)
+red = tflearn.fully_connected(red,10)
+red = tflearn.fully_connected(red,len(salida[0]),activation='softmax') #Forma de datos de salida, limitado por el numero de grupos, función de activación
+red = tflearn.regression(red) #Nos permite saber valores de las probabilidades 
+modelo = tflearn.DNN(red) 
 
-modelo.fit(entrenamiento,salida, n_epoch = 1000, batch_size = 10, show_metric=False)
+modelo.fit(entrada,salida, n_epoch = 1000, batch_size = 70, show_metric=True)
 modelo.save("modelo.tflearn")
 
 def run():
@@ -90,10 +93,11 @@ def run():
 		IndicesResultados = np.argmax(resultados)
 		grupo = grupos[IndicesResultados]
 		if IndicesResultados < 0.1:
-			print("No te entendí")
-		for group in palabras_conocidas["datos"]:
-			if group["tipo"] == grupo:
-				respuesta = group["respuestas"]
-		print(">: ",random.choice(respuesta))
+			print(">: No te entendí")
+		else:
+			for group in palabras_conocidas["datos"]:
+				if group["tipo"] == grupo:
+					respuesta = group["respuestas"]
+			print(">: ",random.choice(respuesta))
 run()
-print("Hola, me llamo Mike ",'\n')
+

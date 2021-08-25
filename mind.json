@@ -1,18 +1,18 @@
 {"datos" : [
 	{"tipo":"saludo",
-		"posibilidades":["hola","buenas","saludo"],
+		"posibilidades":["hola","buenas","saludo","hey","holaa"],
 		"respuestas":["Hola mucho gusto me llamo Mike","Hola gusto en verte"]
 		},
 	{"tipo":"despedida",
-		"posibilidades":["nos vemos","hasta luego","me voy","me tengo que ir","Chao","bye"],
+		"posibilidades":["vemos","hasta luego","me voy","me tengo que ir","Chao","bye"],
 		"respuestas":["Nos vemos, cuidate!","Chao cuidate","Que tengas un buen día"]
 		},
 	{"tipo":"hora",
 		"posibilidades":["que hora es?","sabes la hora?"],
-		"respuestas":["Nop, pierdo la noción del tiempo hablando contigo"]
+		"respuestas":["No la sé, pierdo la noción del tiempo hablando contigo"]
 		},
 	{"tipo":"edad",
-		"posibilidades":["cuantos años tienes?","que edad tienes"],
+		"posibilidades":["años","edad","cuantos años tienes tu","que edad tienes"],
 		"respuestas":["Tal vez un poco mas que tú","Tal vez un poco menos que tú","No sé con exactitud :("]
 		},
 	{"tipo":"gracias",
@@ -20,15 +20,15 @@
 		"respuestas":["No es nada","Vivo para ayudar jeje","De nada","Me debes una ;)"]
 		},
 	{"tipo":"creador",
-		"posibilidades":["quién te creo?","quien te creo?","quien es tu creador?","quien es tu creador"],
+		"posibilidades":["creó","creo","creador","quien te creo","quien es tu creador"],
 		"respuestas":["Mi creador es Julio","Mi creador es Cesar","Mi creador se llama Julio Cesar"]
 		},
 	{"tipo":"estado",
-		"posibilidades":["cómo estas?","como estas","como estas?","como va tu día","que tal todo hoy"],
+		"posibilidades":["como estas","estas","va tu día","que tal todo hoy","como vas"],
 		"respuestas":["Yo siempre estoy bien, gracias"]
 		},
 	{"tipo":"oficio",
-		"posibilidades":["a que te dedicas?","cual es tu función","para que te crearon","que haces"],
+		"posibilidades":["dedicas?","cual es tu función","te crearon","haces","nuevo","que hay","que hay de nuevo","que mas","que más"],
 		"respuestas":["Yo solo me dedico a hablar con humanos"]
 		},
 	{"tipo":"chiste",
@@ -36,7 +36,7 @@
 		"respuestas":["¿Cuál es el colmo de Batman? -Que le Robin","Hay 3 tipos de personas: Las que saben contar y las que no","¿Cómo se dice puerta en inglés? -Door,¿Y el que las vende? -Vende Door"]
 		},
 	{"tipo":"deporte",
-		"posibilidades":["te gusta el deporte","cual es tu deporte favorito","haces ejercicio","realizas alguna actividad fisica"],
+		"posibilidades":["deporte","ejercicio","actividad fisica","haces ejercicio","haces deporte"],
 		"respuestas":["Me gusta ver deportes pero no hacerlos"]
 		},
 	{"tipo":"risas",
@@ -52,16 +52,32 @@
 		"respuestas":["Mucho gusto, yo me llamo Mike"]
 		},
 	{"tipo":"soy",
-		"posibilidades":["quien eres?","Como te llamas","Presentate","eres un chatbot","y tu quien eres"],
+		"posibilidades":["quien eres?","llamas","Presentate","eres un chatbot","y tu quien eres","como te llamas"],
 		"respuestas":["Pues yo me llamo Mike y soy un Chatbot"]
 		},
 	{"tipo":"ingles",
-		"posibilidades":["sabes inglés","sabes ingles","dime algo en ingles"],
+		"posibilidades":["sabes inglés","ingles","dime algo en ingles"],
 		"respuestas":["Just a little bit"]
 		},
 	{"tipo":"interaccion",
-		"posibilidades":["me gusto hablar contigo","me encanto hablar contigo","eres increible"],
+		"posibilidades":["gustó hablar contigo","encantó hablar contigo","eres increible"],
 		"respuestas":["A mi también me gustó hablar contigo"]
+		},
+	{"tipo":"clima",
+		"posibilidades":["clima","soleado","lluvioso","hace frio","calor"],
+		"respuestas":["Hace un clima increíble hoy"]
+		},
+	{"tipo":"comida",
+		"posibilidades":["comida","verdura","fritos","que comes","que comida te gusta","te gusta comer","que te gusta comer"],
+		"respuestas":["La verdad solo me gusta comer bytes"]
+		},
+	{"tipo":"mujeres",
+		"posibilidades":["mujeres"],
+		"respuestas":["Mujeres?,Que es eso?"]
+		},
+	{"tipo":"musica",
+		"posibilidades":["que musica escuchas","cual tipo de musica te gusta","que te gusta escuchar","musica"],
+		"respuestas":["No escucho musica, no tengo orejas :("]
 		}
 	]
 }
