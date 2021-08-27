@@ -36,11 +36,11 @@ palabras = [recortador.stem(word.lower()) for word in palabras if word not in
 palabras = sorted(list(set(palabras)))
 grupos = sorted(grupos)
 
-print("Este es copia_palabras: {}\n".format(copia_palabras))
-print("Este es copia_grupos: {}\n".format(copia_grupos))
-print("Este es tokens: {}\n".format(tokens))
-print("Este es palabras: {}\n".format(palabras))
-print("Este es grupos: {}\n".format(grupos))
+#print("Este es copia_palabras: {}\n".format(copia_palabras))
+#print("Este es copia_grupos: {}\n".format(copia_grupos))
+#print("Este es tokens: {}\n".format(tokens))
+#print("Este es palabras: {}\n".format(palabras))
+#print("Este es grupos: {}\n".format(grupos))
 
 entrada = []
 salida = []
@@ -74,10 +74,10 @@ red = tflearn.fully_connected(red,10)
 red = tflearn.fully_connected(red,10)
 red = tflearn.fully_connected(red,len(salida[0]),activation='softmax') #Forma de datos de salida, limitado por el numero de grupos, función de activación
 red = tflearn.regression(red) #Nos permite saber valores de las probabilidades 
-modelo = tflearn.DNN(red) 
+modelo = tflearn.DNN(red) #Se crea el modelo de red neuronal 
 
-modelo.fit(entrada,salida, n_epoch = 1000, batch_size = 70, show_metric=True)
-modelo.save("modelo.tflearn")
+modelo.fit(entrada,salida, n_epoch = 1000, batch_size = 70, show_metric=True) #Se entrena el modelo
+modelo.save("modelo.tflearn") #Se guarda el modelo
 
 def run():
 	while True:
